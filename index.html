@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Sueldos</title>
+    <link rel="stylesheet" href="styles.css">
+<link type="text/css" rel="stylesheet" href="css/style.css"/>
+<link type="text/css" rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Sueldos</h1>
+        <div class="form-container">
+            <form id="salaryForm">
+                <label for="category">Categoría</label>
+                <select id="category" required>
+                    <option value="logica">Lógica</option>
+                    <option value="chofer">Chofer de Primera</option>
+                    <option value="recolector">Recolectores de residuos y limpieza</option>
+                    <option value="peon">Peón general de barrido</option>
+                    <option value="oficial1">Oficial de primera</option>
+                    <option value="oficialC">Oficial Completo</option>
+                    <option value="oficial">Oficial</option>
+                    <option value="medioOficial">Medio Oficial</option>
+                </select>
+
+                <label for="adicionalA">Adicional cct A (%)</label>
+                <input type="number" id="adicionalA" min="0" max="100" value="10" required>
+
+                <label for="adicionalB">Adicional cct B (%)</label>
+                <input type="number" id="adicionalB" min="0" max="100" value="10" required>
+
+                <label for="dias">Días trabajados</label>
+                <span id="diasValue">0</span>
+                <input type="range" id="dias" min="0" max="31" value="0" oninput="updateDiasValue(this.value)">
+                
+                <label for="horas50">Horas extras 50%</label>
+                <span id="horas50Value">0</span>
+                <input type="range" id="horas50" min="0" max="50" value="0" oninput="updateHoras50Value(this.value)">
+                
+
+                <label for="horas100">Horas extras 100%</label>
+                <span id="horas100Value">0</span>
+                <input type="range" id="horas100" min="0" max="50" value="0" oninput="updateHoras100Value(this.value)">
+                
+
+                <label for="antiguedad">Antigüedad (%)</label>
+                <span id="antiguedadValue">0</span>
+                <input type="range" id="antiguedad" min="0" max="30" value="0" oninput="updateAntiguedadValue(this.value)">
+                
+
+                <button type="button" onclick="calculateSalary()">Calcular</button>
+            </form>
+        </div>
+        <div id="results"></div>
+    </div>
+<!-- Barra de rango para el porcentaje de aumento -->
+<label for="aumentoPorcentaje">Porcentaje de Aumento:</label>
+<span id="aumentoValue">0%</span>
+<input type="range" id="aumentoPorcentaje" name="aumentoPorcentaje" min="0" max="100" value="0" oninput="updateAumentoValue(this.value)">
+
+
+<!-- Botón para simular el aumento -->
+<button onclick="simulateIncrease()">Simular Aumento</button>
+<!-- Nueva sección para mostrar los resultados de la simulación -->
+<div id="simulationResults"></div>
+
+
+    <script src="script.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
